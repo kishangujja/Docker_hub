@@ -7,7 +7,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh ' docker build -t sabair0509/sampleapp:$BUILD_NUMBER .'
+                sh ' docker build -t docker121906/tomcat-repo:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh ' docker push sabair0509/sampleapp:$BUILD_NUMBER'
+                sh ' docker push docker121906/tomcat-repo:$BUILD_NUMBER'
             }
         }
 }
